@@ -1,0 +1,27 @@
+{
+  "projectId": "g4gowa",
+  "reporter": "@reportportal/agent-js-cypress",
+  "reporterOptions": {
+    "endpoint": "https://alpha.reportportal.io/api/v1",
+    "token": "00000000-0000-0000-0000-000000000000",
+    "launch": "Cypress landing page tests",
+    "project": "sandbox",
+    "description": "This launch verifies Cypress landing page and shows main features for @reportportal/agent-js-cypress",
+    "autoMerge": true,
+    "reportHooks": true,
+    "attributes": [
+      {
+        "key": "agent",
+        "value": "cypress"
+      },
+      {
+        "value": "example"
+      }
+    ],
+    "integrationFolder": "cypress/integration",
+    "screenshotsFolder": "cypress/screenshots",
+    "fixturesFolder": "cypress/fixtures",
+    "supportFile": "cypress/support/index.js",
+    "pluginsFile": "cypress/plugins/index.js"
+  }
+}
