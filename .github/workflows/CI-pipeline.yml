@@ -78,6 +78,7 @@ jobs:
           group: 'Example tests'
           spec: cypress/integration/*
           record: true
+          parallel: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
