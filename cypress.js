@@ -6,7 +6,8 @@ const updatedConfig = {
   reporterOptions: {
     ...config.reporterOptions,
     token: process.env.RP_TOKEN,
-  }
+  },
+  key: process.env.RECORD_KEY,
 };
 
 console.log('Updated config', updatedConfig);

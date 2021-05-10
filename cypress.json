@@ -1,5 +1,8 @@
 {
   "projectId": "g4gowa",
+  "record": true,
+  "headless": true,
+  "parallel": true,
   "reporter": "@reportportal/agent-js-cypress",
   "reporterOptions": {
     "endpoint": "https://alpha.reportportal.io/api/v1",
