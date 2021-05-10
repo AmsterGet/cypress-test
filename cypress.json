@@ -6,7 +6,7 @@
   "reporter": "@reportportal/agent-js-cypress",
   "reporterOptions": {
     "endpoint": "https://alpha.reportportal.io/api/v1",
-    "token": "00000000-0000-0000-0000-000000000000",
+    "token": "406abcae-58ae-4b24-bff6-e81b07c5edae",
     "launch": "Cypress landing page tests",
     "project": "sandbox",
     "description": "This launch verifies Cypress landing page and shows main features for @reportportal/agent-js-cypress",
