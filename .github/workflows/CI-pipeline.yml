@@ -72,11 +72,12 @@ jobs:
       - name: 'UI Tests - Chrome'
         uses: cypress-io/github-action@v2
         with:
-          config-file: ./cypress.json
+          config-file: cypress.json
           install: false
           start: npm test
           group: 'Example tests'
           spec: cypress/integration/*
+          record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
