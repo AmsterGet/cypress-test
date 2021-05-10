@@ -19,61 +19,21 @@ on:
       - README.md
 
 jobs:
-  install:
-    runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.3-chrome87-ff82
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - uses: actions/cache@v2
-        id: modules-cache
-        with:
-          path: |
-            ~/.cache/Cypress
-            node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
-
-      - name: Cypress install
-        uses: cypress-io/github-action@v2
-        with:
-          runTests: false
-
   test:
     runs-on: ubuntu-latest
     container: cypress/browsers:node12.18.3-chrome87-ff82
-    needs: install
     strategy:
       fail-fast: false
       matrix:
-        containers: [1, 2, 3]
+        containers: [1, 2]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - uses: actions/cache@v2
-        id: modules-cache
-        with:
-          path: |
-            ~/.cache/Cypress
-            node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
-
-      - name: Create env file
-        run: |
-          touch .env
-          echo RP_TOKEN =${{ secrets.RP_TOKEN }} >> .env
-          echo RECORD_KEY =${{ secrets.RECORD_KEY }} >> .env
 
       - name: 'UI Tests - Chrome'
         uses: cypress-io/github-action@v2
         with:
           config-file: cypress.json
-          install: false
           start: npm test
           group: 'Example tests'
           spec: cypress/integration/*
