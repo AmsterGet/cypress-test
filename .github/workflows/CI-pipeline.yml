@@ -29,6 +29,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+      - name: Create env file
+        run: |
+          touch .env
+          echo RP_TOKEN =${{ secrets.RP_TOKEN }} >> .env
+          echo RECORD_KEY =${{ secrets.RECORD_KEY }} >> .env
       - name: Clean install of node dependencies
         run: npm ci
       - name: Run tests
