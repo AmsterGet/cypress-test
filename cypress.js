@@ -6,7 +6,7 @@ const updatedConfig = {
   ...config,
   reporterOptions: {
     ...config.reporterOptions,
-    token: process.env.RP_TOKEN,
+    // token: process.env.RP_TOKEN,
   },
 };
 
