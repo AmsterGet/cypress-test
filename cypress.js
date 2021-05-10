@@ -8,7 +8,7 @@ const updatedConfig = {
     ...config.reporterOptions,
     token: process.env.RP_TOKEN,
   },
-  key: process.env.RECORD_KEY,
+  key: config.record ? process.env.RECORD_KEY : undefined,
 };
 
 console.log('Updated config', updatedConfig);
