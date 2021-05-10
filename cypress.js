@@ -1,3 +1,4 @@
+require('dotenv').config();
 const cypress = require('cypress');
 const config = require('./cypress.json');
 
