@@ -6,6 +6,6 @@
   "dependencies": {
     "dotenv": "^9.0.2",
     "@reportportal/agent-js-cypress": "^5.0.1",
-    "cypress": "^4.8.0"
+    "cypress": "7.2.0"
   }
 }
