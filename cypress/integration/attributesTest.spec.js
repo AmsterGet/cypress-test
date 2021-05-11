@@ -71,4 +71,39 @@ context('Cypress example page verification', () => {
         cy.info('Check if the `Abrakadabra` word presented on the page');
         cy.contains('Cypress123');
     });
+
+    it('Check that cypress page contains `Abrakadabrabra` word', () => {
+        cy.setTestDescription('This test case checks the `Abrakadabrabra` word on the cypress example page, but it fails.');
+        cy.info('Visit cypress example page: https://example.cypress.io');
+        cy.wait(500);
+        cy.info('Add attributes to the test using `addTestAttributes` command');
+        cy.addTestAttributes([
+            {
+                key: 'check',
+                value: 'shouldFail',
+            },
+        ]);
+
+        cy.warn('This test fails!');
+        cy.wait(500);
+        cy.info('Check if the `Abrakadabrabra` word presented on the page');
+        cy.contains('Cypress123');
+    });
+
+    it('Check that cypress page contains `Cypress12345` word', () => {
+        cy.info('Сypress example page: https://example.cypress.io');
+        cy.setTestDescription('This test case checks the `Cypress12345` word on the cypress example page, but it fails.');
+        cy.wait(500);
+        cy.info('Add attributes to the test using `addTestAttributes` command');
+        cy.addTestAttributes([
+            {
+                key: 'check',
+                value: 'shouldFail',
+            },
+        ]);
+        cy.warn('This test checks `Cypress12345` word!');
+        cy.wait(500);
+        cy.info('Check if the `Cypress12345` word presented on the page');
+        cy.contains('Cypress12345');
+    });
 });
