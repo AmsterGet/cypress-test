@@ -36,7 +36,6 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           config-file: cypress.json
-          command: npm run cypress
           group: 'Example tests'
           spec: cypress/integration/*
           record: true
