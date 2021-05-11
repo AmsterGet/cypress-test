@@ -11,7 +11,6 @@
     "project": "sandbox",
     "description": "This launch verifies Cypress landing page and shows main features for @reportportal/agent-js-cypress",
     "reportHooks": true,
-    "isLaunchMergeRequired": true,
     "attributes": [
       {
         "key": "agent",
