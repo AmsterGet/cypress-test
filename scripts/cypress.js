@@ -17,6 +17,8 @@ const deleteTempFile = (filename) => {
 cypress.run(config).then(
     (runInfo) => {
         console.log(runInfo);
+        console.log('----------------');
+        console.log(process.env);
         fs.readFile(cypressConfigFile, 'utf8', (err, data) => {
             if (err) {
                 throw err;
