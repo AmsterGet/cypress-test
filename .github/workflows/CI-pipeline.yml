@@ -26,6 +26,8 @@ jobs:
       fail-fast: false
       matrix:
         containers: [1, 2, 3]
+    env:
+      CI_BUILD_ID: ${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -45,4 +47,3 @@ jobs:
           DEBUG: 'cypress:*'
           ACTIONS_RUNNER_DEBUG: true
           ACTIONS_STEP_DEBUG: true
-          CI_BUILD_ID: ${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}

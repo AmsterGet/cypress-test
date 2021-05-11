@@ -6,8 +6,6 @@ cypress.run(config).then(
         console.log(runInfo);
         console.log('-----------------------------------------------------------');
         console.log(process.env);
-        console.log('-----------------------------------------------------------');
-        console.log(process);
         process.exit(0);
 
     },
