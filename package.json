@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "node cypress.js"
+    "test": "cypress run"
   },
   "license": "Apache-2.0",
   "dependencies": {
