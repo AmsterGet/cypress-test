@@ -37,9 +37,11 @@ jobs:
           command: npm run cypress
           group: 'Example tests'
           spec: cypress/integration/*
-          DEBUG: 'cypress:*'
           record: true
           parallel: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEBUG: 'cypress:*'
+          ACTIONS_RUNNER_DEBUG: true
+          ACTIONS_STEP_DEBUG: true
