@@ -4,8 +4,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "dotenv": "^9.0.2",
-    "@reportportal/agent-js-cypress": "^5.0.1",
+    "@reportportal/agent-js-cypress": "file://./reporter",
     "cypress": "7.2.0"
   }
 }
