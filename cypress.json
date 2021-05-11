@@ -5,6 +5,7 @@
   "headless": true,
   "reporter": "@reportportal/agent-js-cypress",
   "reporterOptions": {
+    "parallel": true,
     "endpoint": "https://alpha.reportportal.io/api/v1",
     "token": "406abcae-58ae-4b24-bff6-e81b07c5edae",
     "launch": "Cypress landing page tests",
@@ -12,7 +13,6 @@
     "description": "This launch verifies Cypress landing page and shows main features for @reportportal/agent-js-cypress",
     "reportHooks": true,
     "autoMerge": true,
-    "parallel": true,
     "attributes": [
       {
         "key": "agent",
