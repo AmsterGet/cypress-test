@@ -2,6 +2,7 @@ const cypress = require('cypress');
 const fs = require('fs');
 const glob = require('glob');
 const { mergeLaunches } = require('@reportportal/agent-js-cypress/lib/mergeLaunches');
+const config = require('../cypress.json');
 
 const cypressConfigFile = 'cypress.json';
 
@@ -13,7 +14,7 @@ const deleteTempFile = (filename) => {
     fs.unlinkSync(filename);
 };
 
-cypress.run().then(
+cypress.run(config).then(
     (runInfo) => {
         console.log(runInfo);
         fs.readFile(cypressConfigFile, 'utf8', (err, data) => {
