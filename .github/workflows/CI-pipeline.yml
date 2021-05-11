@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [1, 2]
+        containers: [1, 2, 3]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -34,7 +34,6 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           config-file: cypress.json
-          start: npm test
           group: 'Example tests'
           spec: cypress/integration/*
           record: true
