@@ -4,7 +4,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@reportportal/agent-js-cypress": "https://github.com/AmsterGet/agent-cypress-poc#develop",
+    "@reportportal/agent-js-cypress": "https://github.com/AmsterGet/agent-cypress-poc#main",
     "cypress": "7.2.0"
   }
 }
