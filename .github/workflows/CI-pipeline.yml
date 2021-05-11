@@ -39,9 +39,11 @@ jobs:
           spec: cypress/integration/*
           record: true
           parallel: true
+          ci-build-id: ${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEBUG: 'cypress:*'
           ACTIONS_RUNNER_DEBUG: true
           ACTIONS_STEP_DEBUG: true
+          CI_BUILD_ID: ${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}
