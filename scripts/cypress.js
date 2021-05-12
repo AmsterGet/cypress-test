@@ -37,12 +37,13 @@ const mergeParallelLaunches = async (config) => {
     const launchesInProgress = response.content.filter((launch) => launch.status === 'IN_PROGRESS');
     console.log(`Found launches: ${launchesInProgress.length}`);
     // 3. if exists, just finish this process
-    if (launchesInProgress.length) {
+    if (!response.content.length || launchesInProgress.length) {
         return;
     }
     // 4. if no, merge all found launches with the same CI_BUILD_ID attribute value
     const launchIds = response.content.map((launch) => launch.id);
     const request = client.getMergeLaunchesRequest(launchIds);
+    request.attributes = (config.reporterOptions.attributes || []).concat({ value: ciBuildId });
     request.description = config.reporterOptions.description;
     request.extendSuitesDescription = false;
     const mergeURL = 'launch/merge';
