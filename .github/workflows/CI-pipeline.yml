@@ -37,6 +37,7 @@ jobs:
         with:
           config-file: cypress.json
           group: 'Example tests'
+          command: npm run cypress
           spec: cypress/integration/*
           record: true
           parallel: true
