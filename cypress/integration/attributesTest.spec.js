@@ -39,6 +39,7 @@ context('Cypress example page verification', () => {
 
     it('Check that cypress page contains `Cypress123` word', () => {
         cy.info('Сypress example page: https://example.cypress.io');
+        cy.info('Add attributes to the test using `addTestAttributes` command');
         cy.setTestDescription('This test case checks the `Cypress123` word on the cypress example page, but it fails.');
         cy.wait(500);
         cy.info('Add attributes to the test using `addTestAttributes` command');

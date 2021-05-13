@@ -23,18 +23,20 @@ context('Awesome suite', () => {
         cy.setTestDescription('This test case contains explicit test case id');
 
         cy.contains('Cypress');
-        cy.wait(500);
+        cy.wait(1000);
         cy.addTestAttributes([
             {
                 key: 'feature',
                 value: 'ExplicitTestCaseId',
             },
         ]);
+        cy.info('Use timeout 1000ms');
+        cy.wait(1000);
         cy.info('Set testCaseId to the test using `setTestCaseId` command');
-        cy.info('Use timeout 500ms');
-        cy.wait(500);
-        cy.contains('Cypress123');
         cy.setTestCaseId('testCaseIDForTheTest');
+        cy.info('Use timeout 1000ms');
+        cy.wait(1000);
+        cy.contains('Cypress123');
     });
 
     it('Gets, types and asserts', () => {
@@ -51,11 +53,12 @@ context('Awesome suite', () => {
 
         cy.info('Clicks on the type');
         cy.contains('type').click();
-
+        cy.wait(500);
+        cy.info('Use timeout 500ms');
         cy.info(`Should be on a new URL which includes '/commands/actions'`);
         cy.url().should('include', '/commands/actions');
-        cy.info('Use timeout 500ms');
-        cy.wait(500);
+        cy.info('Use timeout 1000ms');
+        cy.wait(1000);
 
         cy.info('Get an input, type into it and verify that the value has been updated');
         cy.get('.action-email')

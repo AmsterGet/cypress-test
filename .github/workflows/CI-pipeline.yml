@@ -17,6 +17,7 @@ on:
   push:
     paths-ignore:
       - README.md
+  pull_request:
 
 jobs:
   test:
@@ -25,7 +26,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        containers: [1, 2, 3, 4, 5]
+        containers: [1, 2, 3]
     env:
       CI_BUILD_ID: ${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}
     steps:
@@ -36,7 +37,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           config-file: cypress.json
-          group: 'Example tests'
+          group: 'UI Tests - Chrome'
           spec: cypress/integration/*
           record: true
           parallel: true
