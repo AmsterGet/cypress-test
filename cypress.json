@@ -28,7 +28,7 @@
           "value": "cypress"
         },
         {
-          "value": "example1"
+          "value": "example"
         }
       ],
       "integrationFolder": "cypress/integration",
