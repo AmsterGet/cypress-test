@@ -1,0 +1,41 @@
+{
+  "projectId": "6b1p8a",
+  "record": true,
+  "parallel": true,
+  "headless": true,
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "reporterEnabled": ["@reportportal/agent-js-cypress", "mochawesome"],
+    "mochawesomeReporterOptions": {
+      "reportDir": "cypress/reports/mocha",
+      "quite": true,
+      "overwrite": false,
+      "html": false,
+      "json": true
+    },
+    "reportportalAgentJsCypressReporterOptions": {
+      "parallel": true,
+      "endpoint": "https://alpha.reportportal.io/api/v1",
+      "token": "406abcae-58ae-4b24-bff6-e81b07c5edae",
+      "launch": "Cypress landing page tests with mochawesome",
+      "project": "sandbox",
+      "description": "This launch verifies Cypress landing page and shows main features for @reportportal/agent-js-cypress",
+      "reportHooks": true,
+      "autoMerge": true,
+      "attributes": [
+        {
+          "key": "agent",
+          "value": "cypress"
+        },
+        {
+          "value": "example1"
+        }
+      ],
+      "integrationFolder": "cypress/integration",
+      "screenshotsFolder": "cypress/screenshots",
+      "fixturesFolder": "cypress/fixtures",
+      "supportFile": "cypress/support/index.js",
+      "pluginsFile": "cypress/plugins/index.js"
+    }
+  }
+}
