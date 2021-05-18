@@ -14,9 +14,6 @@
 name: CI-pipeline
 
 on:
-  push:
-    paths-ignore:
-      - README.md
   pull_request:
 
 jobs:
