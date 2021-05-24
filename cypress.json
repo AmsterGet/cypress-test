@@ -15,10 +15,9 @@
     },
     "reportportalAgentJsCypressReporterOptions": {
       "parallel": true,
-      "endpoint": "https://alpha.reportportal.io/api/v1",
-      "token": "406abcae-58ae-4b24-bff6-e81b07c5edae",
+      "endpoint": "https://demo.reportportal.io/api/v1",
       "launch": "Cypress landing page tests with mochawesome",
-      "project": "sandbox",
+      "project": "default_personal",
       "description": "This launch verifies Cypress landing page and shows main features for @reportportal/agent-js-cypress",
       "reportHooks": true,
       "autoMerge": true,
